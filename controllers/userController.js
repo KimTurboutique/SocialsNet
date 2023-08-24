@@ -22,7 +22,7 @@ module.exports = {
         .populate('thoughts')
 
       if (!user) {
-        return res.status(404).json({ message: 'No userwith that ID' })
+        return res.status(404).json({ message: 'No user with that ID' })
       }
 
       res.json({
