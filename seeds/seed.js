@@ -45,7 +45,7 @@ async function seed() {
   try {
     await User.deleteMany({});
 
-    const createdUsers = await User.create(users);
+    const createdUsers = await User.insertMany(users);
 
     console.log('Seed data created successfully.');
   } catch (error) {

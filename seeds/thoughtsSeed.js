@@ -31,7 +31,7 @@ async function seed() {
     await Thought.deleteMany({});
 
     // Create thoughts
-    const createdThoughts = await Thought.create(thoughts);
+    const createdThoughts = await Thought.insertMany(thoughts);
 
     console.log('Thought seed data created successfully.');
   } catch (error) {
