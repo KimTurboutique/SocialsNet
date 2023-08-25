@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('./models/User');
 
-// MongoDB database
-mongoose.connect('socialsDB', {
+// MongoDB database connection
+mongoose.connect('mongodb://localhost/socialsDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -43,10 +43,8 @@ const users = [
 
 async function seed() {
   try {
-    // Clear existing data
     await User.deleteMany({});
 
-    // Create users
     const createdUsers = await User.create(users);
 
     console.log('Seed data created successfully.');
