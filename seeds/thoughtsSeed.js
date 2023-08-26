@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Thought = require('./models/Thought');
+const { Thought } = require('../models');
 
 // MongoDB database connection
 mongoose.connect('mongodb://localhost/socialsDB', {
@@ -10,19 +10,24 @@ mongoose.connect('mongodb://localhost/socialsDB', {
 // Thoughts
 const thoughts = [
   {
-    content: 'This is thought 1',
+    thoughtText: 'This is thought 1',
+    userName: 'user1'
   },
   {
-    content: 'This is thought 2',
+    thoughtText: 'This is thought 2',
+    userName: 'user4'
   },
   {
-    content: 'This is thought 3',
+    thoughtText: 'This is thought 3',
+    userName: 'user3'
   },
   {
-    content: 'This is thought 4',
+    thoughtText: 'This is thought 4',
+    userName: 'user2'
   },
   {
-    content: 'This is thought 5',
+    thoughtText: 'This is thought 5',
+    userName: 'user5'
   },
 ];
 

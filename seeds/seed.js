@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('./models/User');
+const { User, Thought } = require('../models');
 
 // MongoDB database connection
 mongoose.connect('mongodb://localhost/socialsDB', {
@@ -13,7 +13,7 @@ const users = [
     userName: 'user1',
     email: 'user1@example.com',
     thoughts: [],
-    friends: [], 
+    friends: [],
   },
   {
     userName: 'user2',
@@ -46,7 +46,17 @@ async function seed() {
     await User.deleteMany({});
 
     const createdUsers = await User.insertMany(users);
-
+    const thought = await Thought.find();
+    console.log(thought[0]._id)
+    for (let i = 0; i < thought.length; i++) {
+      let userName = thought[i].userName
+      await User.findOneAndUpdate({ userName }, { $push: { thoughts: thought[i]._id } }, { new: true })
+    }
+    const user = await User.find()
+      console.log(user[Math.floor(Math.random()*user.length)]._id)
+    for (let i = 0; i < user.length; i++) {
+      await User.findOneAndUpdate({ _id:user[i]._id}, { $push:{friends:user[Math.floor(Math.random()*user.length)]._id }}, {new:true})
+    }
     console.log('Seed data created successfully.');
   } catch (error) {
     console.error('Error seeding data:', error);
