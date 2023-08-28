@@ -1,6 +1,6 @@
 # SocialsNet
 
-```This project was built for a social network web application. An API was built to where users can share their thoughts, react to friends’ thoughts, and create a friend list. This project is still in it's development stage and will not be deployed, I will display the routes in Insomnia to show the API's functionality.```
+```This project was built for a social network web application. An API was built to where users can share their thoughts, react to friends’ thoughts, and create a friend list. This project is still in it's development stage and will not be deployed, I will display the routes in Insomnia to demonstrate the API's functionality.```
 
 
 ### Tools/Technologies used:
@@ -11,13 +11,13 @@
 - Screencastify
 
 ## Table of Contents
-- [Video](#Walkthrough)
+- [Walkthrough-Video](#Video)
 - [Test](#Test)
 - [Acknowledgements](#acknowledgements)
 
 ## Video
 
-
+[Walkthrough Video](https://drive.google.com/file/d/1WWnN5wHsJGvN96T0Jo1q2Wh-ykE9eG5p/view)
 
 ## Test
 
